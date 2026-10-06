@@ -17,7 +17,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: execute test cases
-        run: pytest --cov=calc --cov-report=
+        run: pytest --cov=calc --cov-report=term --cov-fail-under=70
         
       - name: executed build test cases
         run: echo "build executed sucessfully"

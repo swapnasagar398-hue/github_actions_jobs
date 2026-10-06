@@ -1,4 +1,4 @@
-name: external flow
+name: unit testing
 
 on:
   push:
@@ -6,16 +6,20 @@ on:
       - main
 
 jobs:
-  external_workflow:
+  test_cases_coverage:
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: install required python
+      - name: install required library
         run: pip install -r requirements.txt
-        
-      - name: run external program
-        run: python data.py
+
+      - name: execute test cases
+        run: pytest --cov=calc --cov-report=term
+
+
+
+  
 

@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: install required python
-        run: pip install requirements.txt
+        run: pip install -r requirements.txt
         
       - name: run external program
         run: python data.py
